@@ -1,130 +1,80 @@
 # css-reset
 A small bunch of code for css reset and css hacks.
 
-    /* 
-      Box sizing border-box allows to include the padding and border in an element's total width and height. This property should apply to every element.
-      If outline is not required to any element in whole document.
-    */
     *{
-      -webkit-box-sizing:border-box;
-      -moz-box-sizing:border-box;
-      box-sizing:border-box;
-      outline:0
+       -webkit-box-sizing:border-box;
+       -moz-box-sizing:border-box;
+       box-sizing:border-box;
+       outline:0
     }
-    /* 
-      Remove default margin from body and all buttons.
-      Remove default margin from paragraph too. If you don't want to remove default paragraph spacing remove p from here.
-    */
     body, button, p{
-      margin:0;
+        margin:0;
     }
-    /* 
-      Remove text decoration from all anchor elements. Also make inherit to the body.
-    */
     a{
-      text-decoration:none;
-      color:inherit;
+        text-decoration:none;
+        color:inherit;
     }
-    /* 
-      Remove default UL padding and LI list style from all UL list.
-    */
     ul{
-      padding:0;
+        padding:0;
         margin: 0;
     }
     ul li{
-      list-style:none;
+        list-style:none;
     }
-    /* 
-      Remove default border from all images.
-    */
     img{
-      border:0;
+        border:0;
     }
-    /* 
-      Make button always cursor pointer.
-    */
     button{
-      cursor:pointer;
+        cursor:pointer;
+    }
+    h1, h2, h3, h4, h5, h6{
+        font-weight:normal;
+        margin:0;
+        font-size:inherit;
+    }
+    body{
+        font-family:sans-serif;
+        font-size:16px;
+        line-height:1.4;
+        color:#3B3B3B;
+        font-synthesis:none;
+        -webkit-text-rendering:optimizeLegibility; 
+        -webkit-font-smoothing:antialiased; 
+        -moz-osx-font-smoothing:grayscale;
+        -webkit-tap-highlight-color:rgba(0,0,0,0);
     }
 
-    /* 
-      If you want to remove all headline default styling
-    */
-    h1, h2, h3, h4, h5, h6{
-      font-weight:normal;
-      margin:0;
-      font-size:inherit;
-    }
-    /*
-      Body default styling
-    */
-    body{
-      font-family:sans-serif;
-      font-size:16px;
-      line-height:1.4;
-      color:#3B3B3B;
-      font-synthesis:none; /* This property controls which missing typefaces, bold or italic, may be synthesized by the browser. */
-      -webkit-text-rendering:optimizeLegibility; /* The browser emphasizes legibility over rendering speed and geometric precision. This enables kerning and optional ligatures. This is optional property remove it if not required. */
-      -webkit-font-smoothing:antialiased; /* Some fonts look fuzzy, blurry, or jagged on iOS Safari or chrome. To solve it add this. This reduces jagged edges to make fonts appear smoother and clearer. If you don't want this Property you can remove it. */
-      -moz-osx-font-smoothing:grayscale; /* Same as above but this supports in mozilla devices. If you don't want this Property you can remove it. */
-      -webkit-tap-highlight-color:rgba(0,0,0,0); /* This remove default background color on tap in iOS devices */
-    }
-    /* 
-      Fields default styling
-    */
     input, textarea, button, select{
-      font-family:inherit;
-      font-size:inherit;
-      background:none;
-      border-radius:0; /* If you are not using border-radius iOS devices have default border-radius on fields. To remove it just make it just use this property. */
-      outline:0;
-      padding:0; /* To remove default padding. because some devices (iOS, safari, IE) could have different padding styling so it's better to give your own padding */
+        font-family:inherit;
+        font-size:inherit;
+        background:none;
+        border-radius:0; 
+        outline:0;
+        padding:0;
         border:1px solid #000;
     }
-    /* 
-      If you don't want default and offset outline on input tel then remove it like below.
-    */
     input[type="tel" i]{padding:0;}
     input[type="tel" i]:focus{outline-offset:0}
-    /* 
-      Remove Select default allow.
-    */
     select{
         -webkit-appearance:none;
-      -moz-appearance:none;
+        -moz-appearance:none;
         appearance:none;
     }
-    /* 
-      Remove focus from all input and select
-    */
     button:focus, input:focus, a:focus, a:active, select:focus{
         outline:0;
     }
-    /*
-      Mozilla firefox input has dotted border. To remove it below property will help.
-    */
     button::-moz-focus-inner, input::-moz-focus-inner, a::-moz-focus-inner, select::-moz-focus-inner, option::-moz-focus-inner{
         border:0;
     }
-    /*
-      Select dotted outline doesn't go from Mozilla firefox. This hack helps to remove outline.
-    */
     select:focus:-moz-focusring {
       color:transparent;
       text-shadow:0 0 0 #585858;
     }
-    /*
-      Disabled input color looks different and faded on some devices to solve it use this property. 
-    */
     input[type="tel" i]:disabled, input:disabled{
         color:inherit;
         opacity:1;
         -webkit-text-fill-color:#585858;
     }
-    /*
-      All placeholder custom color 
-    */
     ::-webkit-input-placeholder { 
       color:#a9a9a9;
     }
