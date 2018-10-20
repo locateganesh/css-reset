@@ -87,3 +87,10 @@ A small bunch of code for css reset and css hacks.
     :-moz-placeholder { 
       color:#a9a9a9;
     }
+    .clearfix:before, .clearfix:after {
+      content:"";
+      display:table;
+    }
+    .clearfix:after {
+        clear:both;
+    }
