@@ -6,17 +6,22 @@
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
-	outline:0
+}
+/* 
+  If you don't want outline on any element in the DOM. you have give no-outline class to html or body. Or you can hard-code outline property in which element you want. 
+*/
+.no-outline *{
+	outline:0;
 }
 /* 
   Remove default margin from body and all buttons.
-  Remove default margin from paragraph too. If you don't want to remove default paragraph spacing remove p from here.
+  Remove default margin from paragraph too.
 */
 body, button, p{
 	margin:0;
 }
 /* 
-  Remove text decoration from all anchor elements. Also make inherit to the body.
+  Remove text decoration from all anchor elements. Also make color inherit to the parent.
 */
 a{
 	text-decoration:none;
@@ -44,7 +49,6 @@ img{
 button{
 	cursor:pointer;
 }
-
 /* 
 	If you want to remove all headline default styling
 */
@@ -57,7 +61,7 @@ h1, h2, h3, h4, h5, h6{
 	Body default styling
 */
 body{
-	font-family:sans-serif;
+	font-family:sans-serif; /* Define here */
 	font-size:16px;
 	line-height:1.4;
     color:#3B3B3B;
@@ -65,19 +69,19 @@ body{
     -webkit-text-rendering:optimizeLegibility; /* The browser emphasizes legibility over rendering speed and geometric precision. This enables kerning and optional ligatures. This is optional property remove it if not required. */
     -webkit-font-smoothing:antialiased; /* Some fonts look fuzzy, blurry, or jagged on iOS Safari or chrome. To solve it add this. This reduces jagged edges to make fonts appear smoother and clearer. If you don't want this Property you can remove it. */
     -moz-osx-font-smoothing:grayscale; /* Same as above but this supports in mozilla devices. If you don't want this Property you can remove it. */
-    -webkit-tap-highlight-color:rgba(0,0,0,0); /* This remove default background color on tap in iOS devices */
+    -webkit-tap-highlight-color:rgba(0,0,0,0); /* This remove default on tap highlight color from mobile devices */
 }
 /* 
 	Fields default styling
 */
 input, textarea, button, select{
-	font-family:inherit;
-	font-size:inherit;
-	background:none;
-	border-radius:0; /* If you are not using border-radius iOS devices have default border-radius on fields. To remove it just make it just use this property. */
-	outline:0;
-	padding:0; /* To remove default padding. because some devices (iOS, safari, IE) could have different padding styling so it's better to give your own padding */
-    border:1px solid #000;
+	font-family:inherit; /* These elements have default fonts in user agent. By this property font inherited to parent. */
+	font-size:inherit;  /* As above */
+	background:none; /* Remove default background color from input */
+	border-radius:0; /* If you are not using border-radius. iOS devices have default border-radius on fields. To remove it just make it just use this property. */
+	outline:0; 
+	padding:0; /* To remove default padding  because devices like iOS, safari, IE could have different padding styling so it's better to give your own padding */
+    border:1px solid; /** Apply border to element */ 
 }
 /* 
 	If you don't want default and offset outline on input tel then remove it like below.
@@ -85,9 +89,9 @@ input, textarea, button, select{
 input[type="tel" i]{padding:0;}
 input[type="tel" i]:focus{outline-offset:0}
 /* 
-	Remove Select default allow.
+	To remove default arrow from select. Give class 'no-arrow' to select.
 */
-select{
+select.no-arrow{
     -webkit-appearance:none;
 	-moz-appearance:none;
     appearance:none;
@@ -120,6 +124,16 @@ input[type="tel" i]:disabled, input:disabled{
     -webkit-text-fill-color:#585858;
 }
 /*
+	If floating elemnts is being used. Use cleafix to solve block level element issue.
+*/
+.clearfix:before, .clearfix:after {
+  content:"";
+  display:table;
+}
+.clearfix:after {
+    clear:both;
+}
+/*
 	All placeholder custom color 
 */
 ::-webkit-input-placeholder { 
@@ -134,3 +148,4 @@ input[type="tel" i]:disabled, input:disabled{
 :-moz-placeholder { 
   color:#a9a9a9;
 }
+
