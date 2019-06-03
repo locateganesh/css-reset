@@ -46,7 +46,6 @@ Every browser has its own **user agent stylesheet** which sets default styling l
         -moz-osx-font-smoothing:grayscale;
         -webkit-tap-highlight-color:rgba(0,0,0,0);
     }
-
     input, textarea, button, select{
         font-family:inherit;
         font-size:inherit;
