@@ -1,9 +1,8 @@
-# CSS Reset
-A small bunch of code for css reset and css hacks.
+# CSS Reset 
+CSS reset is small css properties which overrides the browser default properties also solves some cross-browser compatibility issue.
 
 ## Why css reset?
-Every browser has its own user agent stylesheet which sets default styling for header (*h1, h2, h3*...) , *p*., *body*, * form elements* and other elements.
-If you define font properties in body E.g. `font-size`, `font-family` etc. All other elements take this property but form elements (`input`, `textaera`, `select`) don't take because these properties has its own user agent stylesheet.
+Every browser has its own **user agent stylesheet** which sets default styling like header (*h1, h2, h3*...) , *p*., *body*, form elements (*input*, *select*, *textarea*) and other elements.
 
     *{
        -webkit-box-sizing:border-box;
