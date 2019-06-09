@@ -65,8 +65,8 @@ body{
 	font-size:16px;
 	line-height:1.4;
     color:#3B3B3B;
-	font-synthesis:none; /* This property controls which missing typefaces, bold or italic, may be synthesized by the browser. */
-    -webkit-text-rendering:optimizeLegibility; /* The browser emphasizes legibility over rendering speed and geometric precision. This enables kerning and optional ligatures. This is optional property remove it if not required. */
+	/*font-synthesis:none;*/ /* This property controls which missing typefaces, bold or italic, may be synthesized by the browser. */
+    /*-webkit-text-rendering:optimizeLegibility;*/ /* The browser emphasizes legibility over rendering speed and geometric precision. This enables kerning and optional ligatures. This is optional property remove it if not required. */
     -webkit-font-smoothing:antialiased; /* Some fonts look fuzzy, blurry, or jagged on iOS Safari or chrome. To solve it add this. This reduces jagged edges to make fonts appear smoother and clearer. If you don't want this Property you can remove it. */
     -moz-osx-font-smoothing:grayscale; /* Same as above but this supports in mozilla devices. If you don't want this Property you can remove it. */
     -webkit-tap-highlight-color:rgba(0,0,0,0); /* This remove default on tap highlight color from mobile devices */
@@ -84,17 +84,33 @@ input, textarea, button, select{
     border:1px solid; /** Apply border to element */ 
 }
 /* 
+	To remove default arrow from select. Give class 'no-arrow' to select.
+	In iOS safari, input fields have a shadow at top.
+*/
+select.no-arrow, input, textarea{
+    -webkit-appearance:none;
+	-moz-appearance:none;
+    appearance:none;
+}
+/*
+	Select dotted outline doesn't go from Mozilla firefox. This hack helps to remove outline.
+*/
+select:focus:-moz-focusring {
+  color:transparent;
+  text-shadow:0 0 0 #585858;
+}
+/* 
 	If you don't want default and offset outline on input tel then remove it like below.
 */
 input[type="tel" i]{padding:0;}
 input[type="tel" i]:focus{outline-offset:0}
-/* 
-	To remove default arrow from select. Give class 'no-arrow' to select.
+/*
+	Disabled input color looks different and faded on some devices to solve it use this property. 
 */
-select.no-arrow{
-    -webkit-appearance:none;
-	-moz-appearance:none;
-    appearance:none;
+input[type="tel" i]:disabled, input:disabled{
+    color:inherit;
+    opacity:1;
+    -webkit-text-fill-color:#585858;
 }
 /* 
 	Remove focus from all input and select
@@ -107,21 +123,6 @@ button:focus, input:focus, a:focus, a:active, select:focus{
 */
 button::-moz-focus-inner, input::-moz-focus-inner, a::-moz-focus-inner, select::-moz-focus-inner, option::-moz-focus-inner{
     border:0;
-}
-/*
-	Select dotted outline doesn't go from Mozilla firefox. This hack helps to remove outline.
-*/
-select:focus:-moz-focusring {
-  color:transparent;
-  text-shadow:0 0 0 #585858;
-}
-/*
-	Disabled input color looks different and faded on some devices to solve it use this property. 
-*/
-input[type="tel" i]:disabled, input:disabled{
-    color:inherit;
-    opacity:1;
-    -webkit-text-fill-color:#585858;
 }
 /*
 	If floating elemnts is being used. Use cleafix to solve block level element issue.
