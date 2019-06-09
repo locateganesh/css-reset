@@ -91,7 +91,7 @@ Also, every browser has its own padding for input field which is different from 
      
 To remove default dropdown from select give class `no-arrow` to select or you can define `appearance: none` globally to select which removes dropdown arrow.  
 In iOS safari, input fields have a shadow at top. which looks like this: 
-![iOS safari input appearance](https://s16.postimg.cc/q9eluejl1/ios5_input.png) 
+![iOS safari input appearance](https://s16.postimg.cc/q9eluejl1/ios5_input.png)   
 Property `appearance: none` helps to remove it.
 
      select:focus:-moz-focusring {
