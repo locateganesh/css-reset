@@ -83,7 +83,7 @@ All these user input fields have default property which doesn't get auto overrid
 Safari iOS devices have default radius border. **`boder-radius:0`** property removes it.  
 Also, every browser has its own padding for input field which is different from each other.
 
-     select.no-arrow, input, textarea, button{
+     select.no-arrow, input, textarea{
         -webkit-appearance:none;
         -moz-appearance:none;
         appearance:none;
@@ -189,7 +189,7 @@ Use clearfix when working with float properties.
         padding:0;
         border:1px solid;
      }
-     select.no-arrow, input, textarea, button{
+     select.no-arrow, input, textarea{
          -webkit-appearance:none;
         -moz-appearance:none;
          appearance:none;
